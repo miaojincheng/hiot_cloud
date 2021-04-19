@@ -8,8 +8,6 @@ import android.widget.Toast;
 
 import com.example.hiot_cloud.R;
 import com.example.hiot_cloud.base.BaseActivity;
-import com.example.hiot_cloud.test.mvptest.dagger2test.DaggerPresenterComponent;
-import com.example.hiot_cloud.test.mvptest.dagger2test.PresenterComponent;
 import com.example.hiot_cloud.test.mvptest.model.User;
 
 import javax.inject.Inject;
@@ -21,7 +19,7 @@ public class TestMVPActivity extends BaseActivity<TestView,TestPresenter> implem
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        getActivityComponent().inject(this);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_mvp);
         final EditText etUserName=findViewById(R.id.et_user_name);
@@ -48,6 +46,11 @@ public class TestMVPActivity extends BaseActivity<TestView,TestPresenter> implem
     @Override
     public TestPresenter createPresenter() {
         return presenter;
+    }
+
+    @Override
+    public void injectIndependies() {
+        getActivityComponent().inject(this);
     }
 
 
