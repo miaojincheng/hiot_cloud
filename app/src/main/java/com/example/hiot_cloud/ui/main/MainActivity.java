@@ -1,14 +1,14 @@
-package com.example.hiot_cloud.main;
+package com.example.hiot_cloud.ui.main;
 
 import android.os.Bundle;
-import android.provider.SyncStateContract;
 import android.widget.RadioGroup;
 
+import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.hiot_cloud.R;
-import com.example.hiot_cloud.base.BaseActivity;
-import com.example.hiot_cloud.base.BasePresenter;
+import com.example.hiot_cloud.ui.base.BaseActivity;
+import com.example.hiot_cloud.ui.base.BasePresenter;
 import com.example.hiot_cloud.utils.Constans;
 
 public class MainActivity extends BaseActivity {
@@ -20,7 +20,7 @@ public class MainActivity extends BaseActivity {
 
         //设置Viewpager
         final ViewPager vpMain=findViewById(R.id.vp_main);
-        vpMain.setAdapter(new MainViewPagerAdapter());
+        vpMain.setAdapter(new MainViewPagerAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT));
         vpMain.setOffscreenPageLimit(Constans.MAIN_FRAGMENT_COUNT);
 
         RadioGroup rgMain=findViewById(R.id.rg_main);
