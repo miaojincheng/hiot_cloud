@@ -18,7 +18,7 @@ class MainViewPagerAdapter extends FragmentPagerAdapter {
         Fragment fragment=null;
         switch (position) {
             case Constans.MAIN_VIEWPAGER_INDEX_MESSAGE:
-                //创建消息的fragment todo
+                //创建消息的fragment
                 fragment=MessageFragment.newInstance();
                 break;
             case Constans.MAIN_VIEWPAGER_INDEX_EQUIPMENT:

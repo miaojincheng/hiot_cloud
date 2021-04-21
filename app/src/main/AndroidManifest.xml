@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.hiot_cloud">
 
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -9,19 +10,18 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/hiotapp"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".test.lifecycletest.TestLifeCycleActivity">
-
-        </activity>
-        <activity android:name=".test.mvptest.TestMVPActivity">
-
-        </activity>
-        <activity android:name=".ui.main.MainActivity">
+        android:theme="@style/AppTheme.NoAction">
+        <activity android:name=".splashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".test.lifecycletest.TestLifeCycleActivity" />
+        <activity android:name=".test.mvptest.TestMVPActivity" />
+        <activity android:name=".ui.main.MainActivity">
+
         </activity>
     </application>
 
